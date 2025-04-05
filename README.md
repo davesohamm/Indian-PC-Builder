@@ -1,7 +1,7 @@
 
 # Indian PC Builder 🖥️
 
-![PC Builder](https://github.com/davesohamm/assets/pc-builder-banner.png)
+[PC Builder Demo](https://indian-pc-builder.vercel.app/)
 
 ## Overview
 
