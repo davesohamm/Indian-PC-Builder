@@ -1,0 +1,141 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 18% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 18% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 212 100% 52%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 55% 65%;
+    --secondary-foreground: 222 18% 12%;
+
+    --accent: 190 90% 50%;
+    --accent-foreground: 222 18% 12%;
+
+    --muted: 223 14% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 14% 25%;
+    --input: 223 14% 25%;
+    --ring: 212 100% 52%;
+
+    --radius: 0.5rem;
+
+    --compatible: 142 76% 56%;
+    --warning: 38 92% 56%;
+    --error: 0 72% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .pc-component {
+    @apply relative flex flex-col items-center justify-center border border-border bg-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer hover:border-primary/50;
+  }
+  
+  .component-selected {
+    @apply border-primary border-2;
+  }
+  
+  .component-stats {
+    @apply absolute bottom-2 left-2 right-2 p-2 rounded-md bg-muted/80 opacity-0 group-hover:opacity-100 transition-opacity;
+  }
+  
+  .canvas-container {
+    @apply h-[400px] md:h-[600px] w-full rounded-lg border border-border bg-gradient-to-b from-muted/50 to-background relative overflow-hidden;
+  }
+  
+  .tech-glow {
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:shadow-[0_0_25px_rgba(0,149,255,0.15)] before:z-[-1];
+  }
+  
+  .cpu-animation {
+    @apply absolute top-0 left-0 right-0 bottom-0 pointer-events-none;
+  }
+  
+  .tech-grid {
+    @apply absolute inset-0 bg-[url('/tech-grid.svg')] bg-repeat opacity-10 z-[-1];
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted/30 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary;
+  }
+}
+
+.cpu-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 149, 255, 0.3);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.circuit-line {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(0, 149, 255, 0) 0%, rgba(0, 149, 255, 0.5) 50%, rgba(0, 149, 255, 0) 100%);
+  height: 1px;
+  transform-origin: left center;
+  animation: circuit-animate 3s linear infinite;
+  opacity: 0;
+}
+
+@keyframes circuit-animate {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
