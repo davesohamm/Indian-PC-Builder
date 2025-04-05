@@ -108,7 +108,7 @@ Created by [Soham Dave](https://github.com/davesohamm) - a passionate developer 
 
 - Thanks to all component manufacturers for their specifications
 - Special thanks to the React and Three.js communities
-- All the testers who provided valuable feedback during development
+- Tester who provided valuable feedback during development - Tanishqua Bansal. 
 
 ---
 
